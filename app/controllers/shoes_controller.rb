@@ -13,8 +13,9 @@ class ShoesController < ApplicationController
 
   def create
     @shoe = Shoe.create(shoe_params)
+    @shoe.user = current_user
     if @shoe.save
-      redirect_to shoe_path
+      redirect_to shoes_path
     else
       render :new, status: :unprocessable_entity
     end
