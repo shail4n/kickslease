@@ -4,6 +4,7 @@
     <h4><%=  shoe.title %></h4>
     <p><%= shoe.description %></p>
     <p><%= cl_image_tag shoe.photo.key, height: 200, width: 300, crop: :fill %></p>
+    <%= link_to "New Booking", new_shoe_booking_path(shoe), class: "btn btn-outline-primary" %>
   </li>
   <% end %>
 </ul>
