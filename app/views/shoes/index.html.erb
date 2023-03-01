@@ -1,10 +1,13 @@
 <ul>
   <%  @shoes.each do |shoe| %>
-  <li>
+  <li class="shoe-card">
     <h4><%=  shoe.title %></h4>
     <p><%= shoe.description %></p>
     <p><%= cl_image_tag shoe.photo.key, height: 200, width: 300, crop: :fill %></p>
-    <%= link_to "New Booking", new_shoe_booking_path(shoe), class: "btn btn-outline-primary" %>
+    <%= link_to "Book Kicks", new_shoe_booking_path(shoe), class: "btn btn-outline-primary" %>
+    <% if current_user == shoe.user %>
+      <%= link_to "Delete Kicks", shoe_path(shoe), data: {turbo_method: :delete, turbo_confirm: "Are you sure"}, class: "btn btn-outline-primary" %>
+    <% end %>
   </li>
   <% end %>
 </ul>
