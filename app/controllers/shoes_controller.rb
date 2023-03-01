@@ -27,6 +27,8 @@ class ShoesController < ApplicationController
 
   def update
     @shoe = Shoe.find(params[:id])
+    @shoe.update(shoe_params)
+    redirect_to shoes_path(@shoe)
   end
 
   def destroy
