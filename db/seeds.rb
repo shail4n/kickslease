@@ -22,12 +22,26 @@ end
 
 puts "created #{User.count} users"
 puts "createing new shoes"
+urls = [
+  'https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8c25lYWtlcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1562424995-2efe650421dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fG5pa2UlMjBzbmVha2Vyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1512374382149-233c42b6a83b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bmlrZSUyMHNuZWFrZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1524532787116-e70228437bbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG5pa2UlMjBzbmVha2Vyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1618898909019-010e4e234c55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fG5pa2UlMjBzbmVha2Vyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1514989940723-e8e51635b782?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG5pa2UlMjBzbmVha2Vyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1588361861040-ac9b1018f6d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fG5pa2UlMjBzbmVha2Vyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bmlrZSUyMHNuZWFrZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1562687782-9f2fd422a334?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bmlrZSUyMHNuZWFrZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c25lYWtlcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'
+]
+i = 0
 User.all.each do |user|
-  img = Faker::LoremFlickr.pixelated_image(size: "50x60", search_terms: ['sneaker'])
+  img = urls[i]
   file = URI.open(img)
   shoe = Shoe.new(title: Faker::Team.state, description: Faker::Team.name, price: rand(200..1500), sizes: rand(30..47))
   shoe.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   shoe.user = user
   shoe.save
+  i += 1
 end
 puts "created #{Shoe.count} shoes"
