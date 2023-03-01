@@ -1,12 +1,13 @@
 <div class="container">
   <h1>My Bookings!</h1>
 
-  <ul>
+  <ul class= "booking-card">
     <% @bookings.each do |bk| %>
     <li>
       <h4><%= bk.shoe.title %></h4>
       <h6><%= bk.user.email %></h6>
       <h6><%= bk.end_date %></h6>
+      <%= link_to "Delete Booking", booking_path(bk), data: {turbo_method: :delete, turbo_confirm: "Are you sure"}, class: "btn btn-outline-primary" %>
 
     </li>
     <% end %>
