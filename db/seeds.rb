@@ -11,8 +11,8 @@ require "nokogiri"
 require "faker"
 
 puts "Cleaning database"
-User.destroy_all
 Shoe.destroy_all
+User.destroy_all
 
 puts "Creating new users"
 
