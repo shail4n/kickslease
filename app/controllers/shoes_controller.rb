@@ -1,4 +1,5 @@
 class ShoesController < ApplicationController
+  before_action :authenticate_user!, only: :new
   def index
     @shoes = Shoe.all
   end
@@ -15,7 +16,7 @@ class ShoesController < ApplicationController
     @shoe = Shoe.create(shoe_params)
     @shoe.user = current_user
     if @shoe.save
-      redirect_to shoes_path
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
