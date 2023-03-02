@@ -1,0 +1,28 @@
+
+
+
+  <div class="container">
+  <div class="card-container">
+    <p><%= link_to "back", root_path, class:"back-button "%></p>
+      <div class="shoe-show">
+        <div class="shoe-description">
+          <div class="shoe-title-des">
+            <h1><%= @shoe.title %></h1>
+            <h3><%= @shoe.description %></h3>
+          </div>
+          <div class="shoe-price-sizes">
+            <h6>Price : £<%= @shoe.price %></h6>
+            <p>Size : <%= @shoe.sizes %></p>
+          </div>
+            <div class="shoe-button">
+            <%= link_to "Book Kicks", new_shoe_booking_path(@shoe), class:"button" %>
+            <% if current_user == @shoe.user %>
+            <%= link_to "Delete Kicks", shoe_path(@shoe), data: {turbo_method: :delete, turbo_confirm: "Are you sure"}, class: "button" %>
+            <% end %>
+            </div>
+          </div>
+        <div class="shoe-image">
+          <%= cl_image_tag @shoe.photo.key, height: 500, width: 700, crop: :fill, style: "border-radius: 8px"%>
+        </div>
+      </div>
+    </div>
