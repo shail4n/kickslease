@@ -9,17 +9,20 @@
     <li class="shoe-card" >
     <%= link_to shoe_path(shoe) do  %>
       <p><%= cl_image_tag shoe.photo.key, height: 200, width: 300, crop: :fill, class:"img" %></p>
-       <% end %>
-      <h4 class="px-3"><%= shoe.title %></h4>
-      <div class="px-3 row justifuy-content-between">
-        <p class="col"><%= shoe.description%></p>
-        <p class="col pr-4"><%= shoe.price %></p>
+
+      <div class="card-text">
+        <h4><%= shoe.title %></h4>
+        <div class="card-desc-area">
+          <p><%= shoe.description%></p>
+          <p>£<%= shoe.price %></p>
+        </div>
+        <% if current_user != shoe.user %>
+          <%= link_to "Book Now", new_shoe_booking_path(shoe), class: "button" %>
+        <% end %>
+        <% if current_user == shoe.user %>
+          <%= link_to "Edit", edit_shoe_path(shoe), class: "button" %>
+        <% end %>
       </div>
-      <%= link_to "Book Kicks", new_shoe_booking_path(shoe), class: "btn btn-outline-primary px-3" %>
-      <% if current_user == shoe.user %>
-        <%= link_to "Delete Kicks", shoe_path(shoe), data: {turbo_method: :delete, turbo_confirm: "Are you sure"}, class: "btn btn-outline-primary" %>
-        <%= link_to "Edit", edit_shoe_path(shoe), class: "btn btn-outline-primary" %>
-      <% end %>
     </li>
 
     <% end %>

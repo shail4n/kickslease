@@ -7,6 +7,10 @@
   font-family: 'Sedgwick Ave', cursive;
 }
 
+p{
+  margin-bottom: 0;
+}
+
 .title{
   font-family: 'Bungee Shade', cursive;
   text-shadow: 1px 1px 2px black;
@@ -15,19 +19,73 @@
 
 
 .kicks-display{
+  margin-top: 36px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 20px;
 }
 
 .shoe-card {
+  height: fit-content;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 500px;
   padding: 0px;
   margin: 8px;
   list-style: none;
   background-color: whitesmoke;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 300px;
   border-radius: 8px;
+  overflow: hidden;
+
 }
+
+.shoe-card:hover{
+  .card-text{
+    height: 164px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-desc-area{
+    height: 164px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .button{
+    height: 64px;
+    display: inline-block;
+    width: 116px;
+    background-color:rgba(0, 0, 0, 0.888);
+    border-radius: 8px;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+  }
+  transition: all ease-in-out;
+}
+
+.card-text, .card-desc-area, .button{
+  // box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.597);
+  height: 0;
+  overflow: hidden;
+  transition: 2s;
+}
+
+
+.button:hover{
+  transition: 1s;
+  color:black;
+  background-color: turquoise;
+
+}
+
 
 .img {
   justify-content: center;
