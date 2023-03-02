@@ -16,13 +16,21 @@
 
 .kicks-display{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .shoe-card {
-  padding: 16px;
+  padding: 0px;
   margin: 8px;
   list-style: none;
+  background-color: whitesmoke;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 300px;
+  border-radius: 8px;
+}
+
+.img {
+  justify-content: center;
 }
 
 .banner{
