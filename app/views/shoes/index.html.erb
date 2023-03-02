@@ -5,8 +5,11 @@
 <div class="container">
   <ul class= "kicks-display">
     <%  @shoes.each do |shoe| %>
+
     <li class="shoe-card" >
+    <%= link_to shoe_path(shoe) do  %>
       <p><%= cl_image_tag shoe.photo.key, height: 200, width: 300, crop: :fill, class:"img" %></p>
+
       <div class="card-text">
         <h4><%= shoe.title %></h4>
         <div class="card-desc-area">
@@ -21,6 +24,7 @@
         <% end %>
       </div>
     </li>
+
     <% end %>
   </ul>
 </div>
