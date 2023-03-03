@@ -1,26 +1,80 @@
-  .booking-card{
-    list-style-type: none;
+  .booking-card {
+    background-color: rgba(245, 245, 245, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 16px;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 34px;
+    transition: 1s;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    transition: 1s;
+  }
+
+  .booking-description {
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .img-shoe {
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin-right: 10%;
+  }
+
+  .booking-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+.container-booking {
+  background-image: url("https://wallpapers.com/images/featured/x499s7jambwdigab.jpg");
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  background-position: center;
+}
+  // .card{
+
+  //   background-color: rgba(45,45,45, 0.5);
+
+  //   border-radius: 8px;
+
+  //   box-shadow: 0 0 48px black;
+
+  //   padding: 16px;
+
+  //   /* line-height: 1px; */
+
+  //   display: inline-block;
+
+  //   width: 900px;
+
+  //   margin-top: 24px;
+
+  //   transition: 1s;
+
+  //   color: whitesmoke;
+
+  // }
+
+
+
+
+  .booking-card:hover {
+
+    color: black;
 
     background-color: whitesmoke;
 
-
-    border-radius: 8px;
-
-    box-shadow: 0 0 1px black;
-
-    padding: 16px;
-
-    /* line-height: 1px; */
-
-    display: inline-block;
-
-    width: 900px;
-
-    margin-top: 24px;
-
     transition: 1s;
-    color: black;
 
-
+    width: 920px;
 
   }
