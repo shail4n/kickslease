@@ -1,11 +1,15 @@
 class ShoesController < ApplicationController
   before_action :authenticate_user!, only: :new
   def index
-    @shoes = Shoe.all
-  end
-
-  def my_kicks
-    @shoes = Shoe.where(@shoe.user == current_user)
+    if params[:query].present?
+      sql_query = <<~SQL
+        shoes.title @@ :query
+        OR shoes.description @@ :query
+      SQL
+      @shoes = Shoe.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @shoes = Shoe.all
+    end
   end
 
   def show
@@ -15,7 +19,6 @@ class ShoesController < ApplicationController
   def new
     @shoe = Shoe.new
   end
-
 
   def create
     @shoe = Shoe.create(shoe_params)
