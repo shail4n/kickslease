@@ -4,6 +4,10 @@ class ShoesController < ApplicationController
     @shoes = Shoe.all
   end
 
+  def my_kicks
+    @shoes = Shoe.where(@shoe.user == current_user)
+  end
+
   def show
     @shoe = Shoe.find(params[:id])
   end
@@ -11,6 +15,7 @@ class ShoesController < ApplicationController
   def new
     @shoe = Shoe.new
   end
+
 
   def create
     @shoe = Shoe.create(shoe_params)

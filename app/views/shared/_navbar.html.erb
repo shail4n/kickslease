@@ -16,7 +16,7 @@
         <a class="nav-link" href="/bookings">Bookings</a>
       </li>
       <li>
-        <a class="nav-link" href="/bookings">My Kicks</a>
+        <%= link_to "My Kicks", user_path(current_user), class:"nav-link" %>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 row pr-8 mx-5 d-flex">
