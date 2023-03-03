@@ -35,7 +35,7 @@ class ShoesController < ApplicationController
   def destroy
     @shoe = Shoe.find(params[:id])
     @shoe.destroy
-    redirect_to shoe_path, status: :see_other
+    redirect_to root_path, status: :see_other
   end
 
   def shoe_params
