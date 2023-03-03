@@ -1,0 +1,50 @@
+.login-body {
+  background-image: url("https://wallpapers.com/images/featured/x499s7jambwdigab.jpg");
+  height: 100%;
+  color: white;
+}
+.container-form {
+  padding-top: 16px;
+  width: 50%;
+  margin: auto;
+}
+
+.form-inputs input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.form-actions input[type="submit"] {
+  background-color: #f7f8f8;
+  color: #0e0d0d;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.signup-logout {
+  text-align: center;
+  padding: 24px;
+}
+
+.form-actions input[type="submit"]:hover {
+  background-color: #8f8f95;
+}
+
+.signup-link {
+  text-decoration: none;
+  color: rgb(248, 246, 246);
+}
+.signup-link:hover {
+  color: #8f8f95;
+}
