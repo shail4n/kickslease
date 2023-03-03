@@ -22,12 +22,14 @@ p{
   margin-top: 36px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-row-gap: 20px;
+  grid-row-gap: 50px;
+  justify-content: center;
+
 }
 
 .shoe-card {
   height: fit-content;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -35,9 +37,9 @@ p{
   padding: 0px;
   margin: 8px;
   list-style: none;
-  background-color: whitesmoke;
+  background-color: white;
   width: 300px;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
 
 }
@@ -79,11 +81,28 @@ p{
 }
 
 
-.button:hover{
+.bbutton{
+  transition: 1s;
+  display: inline-block;
+  width: 116px;
+  background-color:rgba(0, 0, 0, 0.888);
+  border-radius: 8px;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.bbutton:hover{
   transition: 1s;
   color:black;
-  background-color: turquoise;
+  background-color: rgb(222, 222, 222);
+  box-shadow: 1px 1px 4px gray;
 
+}
+
+svg:hover{
+  transition: 1s;
+  fill: gray;
 }
 
 
